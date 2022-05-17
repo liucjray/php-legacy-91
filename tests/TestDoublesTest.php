@@ -155,6 +155,8 @@ class TestDoublesTest extends \PHPUnit\Framework\TestCase
             ->onlyMethods(['doSomething'])
             ->getMock();
 
+        $mock->method('doSomething')->willReturn('foo');
+
         $this->assertSame('foo', $mock->nonMockedMethod('bar'));
     }
 
